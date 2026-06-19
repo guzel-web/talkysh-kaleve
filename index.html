@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Талкыш Калеве — Традиционная татарская сладость в Казани | Мастер Гульшат</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/playfair-display@5.0.19/index.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/inter@5.0.16/index.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/cormorant-garamond@5.0.18/index.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<style>
+  :root {
+    --emerald: #0a5c47;
+    --emerald-dark: #073d2f;
+    --gold: #c9a961;
+    --gold-light: #e6d4a0;
+    --cream: #faf6ee;
+  }
+  * { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--cream);
+    color: #2a2a2a;
+    overflow-x: hidden;
+  }
+  h1, h2, h3, .font-serif { font-family: 'Playfair Display', serif; }
+  
+  .text-emerald-t { color: var(--emerald); }
+  .bg-emerald-t { background: var(--emerald); }
+  .bg-emerald-dark { background: var(--emerald-dark); }
+  .text-gold { color: var(--gold); }
+  .bg-gold { background: var(--gold); }
+  .border-gold { border-color: var(--gold); }
+  .bg-cream { background: var(--cream); }
+  
+  .tatar-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cpath d='M30 5 L35 15 L45 15 L37 23 L40 33 L30 27 L20 33 L23 23 L15 15 L25 15 Z' fill='none' stroke='%23c9a961' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+  }
+  
+  .ornament-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+  .ornament-divider::before, .ornament-divider::after {
+    content: '';
+    height: 1px;
+    width: 60px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+  
+  .btn-primary {
+    background: linear-gradient(135deg, var(--gold) 0%, #b8964a 100%);
+    color: var(--emerald-dark);
+    font-weight: 600;
+    padding: 0.875rem 2rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(201, 169, 97, 0.3);
+    display: inline-block;
+    letter-spacing: 0.05em;
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(201, 169, 97, 0.5);
+  }
+  
+  .gold-frame {
+    border: 1px solid var(--gold);
+    padding: 0.5rem;
+    border-radius: 4px;
+  }
+  .gold-frame img {
+    border-radius: 2px;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .video-frame {
+    border: 2px solid var(--gold);
+    padding: 0.75rem;
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(201, 169, 97, 0.08) 0%, rgba(201, 169, 97, 0.02) 100%);
+    box-shadow: 0 20px 50px rgba(7, 61, 47, 0.15);
+    position: relative;
+  }
+  .video-frame::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--cream);
+    padding: 0 1rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 0.75rem;
+    color: var(--gold);
+    letter-spacing: 0.2em;
+    white-space: nowrap;
+  }
+  .video-frame iframe {
+    border-radius: 8px;
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: none;
+    background: #000;
+  }
+  
+  .nav-link {
+    position: relative;
+    transition: color 0.3s;
+  }
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--gold);
+    transition: width 0.3s;
+  }
+  .nav-link:hover::after { width: 100%; }
+  .nav-link:hover { color: var(--gold); }
+  
+  .marquee {
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .marquee-track {
+    display: inline-flex;
+    animation: marquee 30s linear infinite;
+    gap: 3rem;
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  
+  .step-num {
+    width: 60px;
+    height: 60px;
+    border: 2px solid var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--gold);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  
+  .testimonial {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    position: relative;
+    border-left: 4px solid var(--gold);
+  }
+  .testimonial::before {
+    content: '"';
+    position: absolute;
+    top: -20px;
+    left: 20px;
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem;
+    color: var(--gold);
+    line-height: 1;
+    opacity: 0.3;
+  }
+  
+  .feature-icon {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, var(--gold) 0%, #b8964a 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin-bottom: 1rem;
+  }
+  
+  .gallery-item {
+    overflow: hidden;
+    border-radius: 8px;
+    position: relative;
+    cursor: pointer;
+  }
+  .gallery-item img {
+    transition: transform 0.6s ease;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .gallery-item:hover img {
+    transform: scale(1.08);
+  }
+  .gallery-item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(7,61,47,0.6) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .gallery-item:hover::after { opacity: 1; }
+  
+  .section-title {
+    font-size: clamp(1.8rem, 4vw, 2.75rem);
+    color: var(--emerald-dark);
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+  }
+  
+  .price-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    border: 2px solid var(--gold);
+    transition: all 0.4s;
+    position: relative;
+  }
+  .price-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 30px rgba(201, 169, 97, 0.15);
+  }
+  
+  .accordion-item {
+    background: white;
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+    overflow: hidden;
+    border: 1px solid #eee7d3;
+  }
+  .accordion-header {
+    padding: 1.25rem 1.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    color: var(--emerald-dark);
+  }
+  .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    padding: 0 1.5rem;
+  }
+  .accordion-content p {
+    padding-bottom: 1.25rem;
+    color: #555;
+    line-height: 1.7;
+  }
+  .accordion-item.active .accordion-content {
+    max-height: 300px;
+  }
+  .accordion-item.active .accordion-arrow {
+    transform: rotate(180deg);
+  }
+  .accordion-arrow {
+    transition: transform 0.3s;
+    color: var(--gold);
+  }
+  
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .nav-links.open {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: white;
+      padding: 1.5rem;
+      gap: 1rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md z-50 shadow-sm">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="#" class="flex items-center gap-2">
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+        <circle cx="20" cy="20" r="19" stroke="#c9a961" stroke-width="1.5"/>
+        <path d="M20 8 L23 16 L31 16 L25 21 L27 29 L20 24 L13 29 L15 21 L9 16 L17 16 Z" fill="#0a5c47"/>
+      </svg>
+      <div>
+        <div class="font-serif text-lg text-emerald-dark font-bold leading-tight">Мастер Гульшат</div>
+        <div class="text-xs text-gold tracking-widest">ТАЛКЫШ КАЛЕВЕ · КАЗАНЬ</div>
+      </div>
+    </a>
+    <div class="nav-links hidden md:flex items-center gap-8 text-sm text-emerald-dark">
+      <a href="#order" class="nav-link">Заказать</a>
+      <a href="tel:+79063238582" class="btn-primary !py-2 !px-5">+7 906 323-85-82</a>
+    </div>
+    <button id="menuToggle" class="md:hidden text-emerald-dark">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+  <div class="absolute inset-0 bg-emerald-dark"></div>
+  <div class="absolute inset-0 tatar-pattern opacity-20"></div>
+  
+  <div class="relative max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12 items-center w-full">
+    <div class="text-white" data-aos="fade-right" data-aos-duration="1000">
+      <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-gold/40 px-4 py-2 rounded-full mb-6">
+        <span class="w-2 h-2 bg-gold rounded-full animate-pulse"></span>
+        <span class="text-sm tracking-wider">АВТОРСКАЯ КОНДИТЕРСКАЯ · КАЗАНЬ</span>
+      </div>
+      <h1 class="font-serif text-5xl md:text-7xl leading-tight mb-6">
+        Талкыш Калеве —<br>
+        <span class="text-gold italic">сладкая магия</span><br>
+        татарского чаепития
+      </h1>
+      <p class="text-lg md:text-xl text-white/90 mb-8 max-w-lg font-light leading-relaxed">
+        Традиционный татарский национальный десерт из мёда, масла и муки, создаваемый вручную по старинным рецептам наших предков. Каждая порция — произведение искусства.
+      </p>
+      <div class="flex items-center gap-8 mt-12 pt-8 border-t border-white/20">
+        <div>
+          <div class="font-serif text-3xl text-gold">10+</div>
+          <div class="text-xs tracking-widest opacity-80">ЛЕТ ОПЫТА</div>
+        </div>
+        <div>
+          <div class="font-serif text-3xl text-gold">500+</div>
+          <div class="text-xs tracking-widest opacity-80">ДОВОЛЬНЫХ КЛИЕНТОВ</div>
+        </div>
+        <div>
+          <div class="font-serif text-3xl text-gold">100%</div>
+          <div class="text-xs tracking-widest opacity-80">НАТУРАЛЬНЫЙ СОСТАВ</div>
+        </div>
+      </div>
+    </div>
+    <div class="hidden md:block" data-aos="zoom-in" data-aos-duration="1200">
+      <div class="gold-frame relative">
+        <img src="images/talkysh-kaleve.jpg" alt="Талкыш калеве" class="aspect-square">
+      </div>
+    </div>
+  </div>
+  
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/70 animate-bounce">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<section class="bg-emerald-t py-5 overflow-hidden">
+  <div class="marquee">
+    <div class="marquee-track text-white/90 font-serif text-lg">
+      <span>✦ ТРАДИЦИИ</span><span> НАТУРАЛЬНЫЙ МЁД</span><span>✦ РУЧНАЯ РАБОТА</span><span>✦ БЕЗ КОНСЕРВАНТОВ</span><span> ДОСТАВКА ПО КАЗАНИ</span><span> ПОДАРОЧНЫЕ НАБОРЫ</span><span> ТРАДИЦИИ</span><span>✦ НАТУРАЛЬНЫЙ МЁД</span><span> РУЧНАЯ РАБОТА</span><span> БЕЗ КОНСЕРВАНТОВ</span><span> ДОСТАВКА ПО КАЗАНИ</span><span> ПОДАРОЧНЫЕ НАБОРЫ</span>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="py-24 bg-cream relative">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid md:grid-cols-2 gap-16 items-center">
+      <div data-aos="fade-right">
+        <div class="relative">
+          <img src="images/master.jpg" alt="Приготовление" class="rounded-lg shadow-xl w-full">
+        </div>
+      </div>
+      <div data-aos="fade-left">
+        <div class="text-sm tracking-widest text-gold mb-3">О СЛАДОСТИ</div>
+        <h2 class="section-title">Что такое талкыш калеве?</h2>
+        <div class="ornament-divider justify-start">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2 L12 8 L18 8 L13 12 L15 18 L10 14 L5 18 L7 12 L2 8 L8 8 Z" fill="#c9a961"/></svg>
+        </div>
+        <p class="text-gray-700 leading-relaxed mb-5 text-lg">
+          <span class="font-serif italic text-emerald-dark text-2xl">Талкыш калеве</span> — традиционный татарский национальный десерт, представляющий собой небольшие плотные пирамидки из тончайших карамельно-медовых волокон, результат многочасового кропотливого труда. Каждая порция создаётся вручную, без использования машин и искусственных добавок. Это живое искусство, передающееся из поколения в поколение.
+        </p>
+        <p class="text-gray-600 leading-relaxed mb-8">
+          Лакомство имеет нежный сливочно-медовый вкус и буквально тает во рту. По текстуре и ощущениям десерт напоминает нечто среднее между сладкой ватой и рассыпчатой халвой. Каждая порция — произведение искусства.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INGREDIENTS -->
+<section class="py-20 bg-emerald-dark relative overflow-hidden">
+  <div class="absolute inset-0 tatar-pattern opacity-10"></div>
+  <div class="max-w-7xl mx-auto px-6 relative">
+    <div class="text-center mb-16" data-aos="fade-up">
+      <div class="text-sm tracking-widest text-gold mb-3">СОСТАВ</div>
+      <h2 class="font-serif text-4xl md:text-5xl text-white mb-4">Только натуральные ингредиенты</h2>
+      <p class="text-white/70 max-w-2xl mx-auto">Никаких консервантов, красителей и усилителей вкуса. Только то, что использовали наши прабабушки.</p>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+        <h3 class="font-serif text-2xl text-white mb-2">Мёд</h3>
+        <p class="text-white/70 text-sm leading-relaxed">Натуральный цветочный мёд от проверенных пасечников</p>
+      </div>
+      <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+        <h3 class="font-serif text-2xl text-white mb-2">Сливочное масло</h3>
+        <p class="text-white/70 text-sm leading-relaxed">Отборное сливочное масло от местных фермерских хозяйств</p>
+      </div>
+      <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+        <h3 class="font-serif text-2xl text-white mb-2">Пшеничная мука</h3>
+        <p class="text-white/70 text-sm leading-relaxed">Мука высшего сорта тонкого помола для идеальной текстуры</p>
+      </div>
+      <div class="text-center" data-aos="fade-up" data-aos-delay="400">
+        <h3 class="font-serif text-2xl text-white mb-2">Сахар</h3>
+        <p class="text-white/70 text-sm leading-relaxed">Натуральный сахар для идеальной карамелизации и хрустящей текстуры</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process" class="py-24 bg-cream">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16" data-aos="fade-up">
+      <div class="text-sm tracking-widest text-gold mb-3">ПРОИЗВОДСТВО</div>
+      <h2 class="section-title">Искусство ручной работы</h2>
+      <div class="ornament-divider">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2 L12 8 L18 8 L13 12 L15 18 L10 14 L5 18 L7 12 L2 8 L8 8 Z" fill="#c9a961"/></svg>
+      </div>
+      <p class="text-gray-600 max-w-2xl mx-auto">Каждая партия калеве создаётся вручную — от первой капли мёда до последнего штриха в оформлении</p>
+    </div>
+
+    <!-- VIDEO -->
+    <div class="max-w-4xl mx-auto mb-16" data-aos="zoom-in" data-aos-duration="1000">
+      <div class="video-frame">
+        <iframe 
+          src="https://vk.com/video_ext.php?oid=-211319100&id=456239037&hd=2&autoplay=0" 
+          allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" 
+          frameborder="0" 
+          allowfullscreen>
+        </iframe>
+      </div>
+      <p class="text-center text-sm text-gray-500 mt-4 italic font-serif">
+        ✦ Посмотрите, как рождается талкыш калеве — от мёда до воздушной пирамидки
+      </p>
+    </div>
+    
+    <div class="space-y-6">
+      <div class="flex items-start gap-6 bg-white p-8 rounded-xl shadow-sm" data-aos="fade-right">
+        <div class="step-num">01</div>
+        <div>
+          <h3 class="font-serif text-2xl text-emerald-dark mb-2">Уваривание мёда</h3>
+          <p class="text-gray-600 leading-relaxed">Натуральный мёд, сахар и вода медленно уваривается при контролируемой температуре, пока не приобретёт нужную консистенцию и карамельный оттенок.</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-6 bg-white p-8 rounded-xl shadow-sm" data-aos="fade-left">
+        <div class="step-num">02</div>
+        <div>
+          <h3 class="font-serif text-2xl text-emerald-dark mb-2">Добавление масла и муки</h3>
+          <p class="text-gray-600 leading-relaxed">В горячую медовую массу аккуратно вводится альба (сливочное масло и мука). Самый ответственный момент.</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-6 bg-white p-8 rounded-xl shadow-sm" data-aos="fade-right">
+        <div class="step-num">03</div>
+        <div>
+          <h3 class="font-serif text-2xl text-emerald-dark mb-2">Растягивание нитей</h3>
+          <p class="text-gray-600 leading-relaxed">Самый зрелищный этап: мастер вручную вытягивает массу в тончайшие нити, складывает их и снова растягивает. Процесс повторяется десятки раз, пока не образуется воздушная «паутинка».</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-6 bg-white p-8 rounded-xl shadow-sm" data-aos="fade-left">
+        <div class="step-num">04</div>
+        <div>
+          <h3 class="font-serif text-2xl text-emerald-dark mb-2">Формование и упаковка</h3>
+          <p class="text-gray-600 leading-relaxed">Готовая масса бережно формуется в традиционные пирамидки, охлаждается и упаковывается в подарочные короба с татарским орнаментом.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATALOG -->
+<section id="catalog" class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16" data-aos="fade-up">
+      <div class="text-sm tracking-widest text-gold mb-3">НАШИ НАБОРЫ</div>
+      <h2 class="section-title">Позвольте себе лучшее</h2>
+      <div class="ornament-divider">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2 L12 8 L18 8 L13 12 L15 18 L10 14 L5 18 L7 12 L2 8 L8 8 Z" fill="#c9a961"/></svg>
+      </div>
+    </div>
+    
+    <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+      <div class="price-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="gold-frame mb-6">
+          <img src="images/podarok.jpg" alt="Подарочная упаковка" class="aspect-square">
+        </div>
+        <h3 class="font-serif text-2xl text-emerald-dark mb-2">Подарочная упаковка</h3>
+        <p class="text-gray-500 text-sm mb-4">Лучший подарок близким и коллегам</p>
+        <div class="flex items-baseline gap-2 mb-5">
+          <span class="font-serif text-4xl text-emerald-dark">810 ₽</span>
+        </div>
+      </div>
+      
+      <div class="price-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="gold-frame mb-6">
+          <img src="images/opt.jpg" alt="Оптовый заказ" class="aspect-square">
+        </div>
+        <h3 class="font-serif text-2xl text-emerald-dark mb-2">Оптовый заказ</h3>
+        <p class="text-gray-500 text-sm mb-4">Для корпоративных заказов и оптовых покупателей.</p>
+        <div class="flex items-baseline gap-2 mb-5">
+          <span class="font-serif text-4xl text-emerald-dark">от 3 000 ₽</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="py-24 bg-cream">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16" data-aos="fade-up">
+      <div class="text-sm tracking-widest text-gold mb-3">ПОЧЕМУ МЫ</div>
+      <h2 class="section-title">Наши преимущества</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-white p-7 rounded-xl shadow-sm hover:shadow-lg transition-shadow" data-aos="fade-up" data-aos-delay="100">
+        <div class="feature-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 L15 9 L22 9 L17 14 L19 21 L12 17 L5 21 L7 14 L2 9 L9 9 Z"/></svg>
+        </div>
+        <h3 class="font-serif text-xl text-emerald-dark mb-2">Ручная работа</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">Каждое калеве создаётся вручную мастером с многолетним опытом</p>
+      </div>
+      <div class="bg-white p-7 rounded-xl shadow-sm hover:shadow-lg transition-shadow" data-aos="fade-up" data-aos-delay="200">
+        <div class="feature-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6 V12 L16 14"/></svg>
+        </div>
+        <h3 class="font-serif text-xl text-emerald-dark mb-2">Свежесть</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">Готовим под заказ — вы получаете свежайший продукт</p>
+      </div>
+      <div class="bg-white p-7 rounded-xl shadow-sm hover:shadow-lg transition-shadow" data-aos="fade-up" data-aos-delay="300">
+        <div class="feature-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7 L21 7 L18 20 H6 Z"/><path d="M8 7 V5 C8 3 10 2 12 2 C14 2 16 3 16 5 V7"/></svg>
+        </div>
+        <h3 class="font-serif text-xl text-emerald-dark mb-2">Подарочная упаковка</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">Красивая татарская упаковка — готова к вручению</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16" data-aos="fade-up">
+      <div class="text-sm tracking-widest text-gold mb-3">ГАЛЕРЕЯ</div>
+      <h2 class="section-title">Моменты красоты</h2>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+      <div class="gallery-item aspect-square" data-aos="zoom-in" data-aos-delay="100">
+        <img src="images/podarok.jpg" alt="">
+      </div>
+      <div class="gallery-item aspect-square" data-aos="zoom-in" data-aos-delay="200">
+        <img src="images/master.jpg" alt="">
+      </div>
+      <div class="gallery-item aspect-square" data-aos="zoom-in" data-aos-delay="300">
+        <img src="images/talkysh-kaleve.jpg" alt="">
+      </div>
+      <div class="gallery-item aspect-square" data-aos="zoom-in" data-aos-delay="400">
+        <img src="images/opt-korob.jpg" alt="">
+      </div>
+      <div class="gallery-item aspect-square" data-aos="zoom-in" data-aos-delay="500">
+        <img src="https://image.qwenlm.ai/public_source/73100530-0856-405f-816f-659fb86ff0aa/105114eeb-ee54-4be7-9530-70fb6551f50b.png" alt="">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" class="py-24 bg-emerald-dark relative overflow-hidden">
+  <div class="absolute inset-0 tatar-pattern opacity-10"></div>
+  <div class="max-w-7xl mx-auto px-6 relative">
+    <div class="text-center mb-16" data-aos="fade-up">
+      <div class="text-sm tracking-widest text-gold mb-3">ОТЗЫВЫ</div>
+      <h2 class="font-serif text-4xl md:text-5xl text-white mb-4">Что говорят наши клиенты</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="testimonial" data-aos="fade-up" data-aos-delay="100">
+        <div class="flex items-center gap-1 mb-3 text-gold">★★★★★</div>
+        <p class="text-gray-700 leading-relaxed mb-4">Заказывала подарочный набор на юбилей свекрови — восторг! Красивая упаковка, невероятно нежная текстура. Настоящий вкус детства у моей бабушки в деревне.</p>
+        <div class="flex items-center gap-3 pt-4 border-t border-gray-100">
+          <div class="w-12 h-12 rounded-full bg-emerald-t text-white flex items-center justify-center font-serif text-lg">А</div>
+          <div>
+            <div class="font-semibold text-emerald-dark">Алсу Мухаметзянова</div>
+            <div class="text-xs text-gray-500">Казань · Март 2026</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial" data-aos="fade-up" data-aos-delay="200">
+        <div class="flex items-center gap-1 mb-3 text-gold">★★★★★</div>
+        <p class="text-gray-700 leading-relaxed mb-4">Пробовал калеве во многих местах Казани, но у Гульшат — самые лучшие! Тает во рту. Заказываю регулярно для семьи и в подарок друзьям из других городов.</p>
+        <div class="flex items-center gap-3 pt-4 border-t border-gray-100">
+          <div class="w-12 h-12 rounded-full bg-emerald-t text-white flex items-center justify-center font-serif text-lg">Р</div>
+          <div>
+            <div class="font-semibold text-emerald-dark">Рустам Валиев</div>
+            <div class="text-xs text-gray-500">Казань · Февраль 2026</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial" data-aos="fade-up" data-aos-delay="300">
+        <div class="flex items-center gap-1 mb-3 text-gold">★★★★★</div>
+        <p class="text-gray-700 leading-relaxed mb-4">Приехала в Казань в командировку и открыла для себя эту сладость. Теперь заказываю доставкой в Москву — коллеги в офисе обожают! Качество всегда на высоте.</p>
+        <div class="flex items-center gap-3 pt-4 border-t border-gray-100">
+          <div class="w-12 h-12 rounded-full bg-emerald-t text-white flex items-center justify-center font-serif text-lg">Е</div>
+          <div>
+            <div class="font-semibold text-emerald-dark">Елена Соколова</div>
+            <div class="text-xs text-gray-500">Москва · Январь 2026</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="py-24 bg-cream">
+  <div class="max-w-3xl mx-auto px-6">
+    <div class="text-center mb-16" data-aos="fade-up">
+      <div class="text-sm tracking-widest text-gold mb-3">FAQ</div>
+      <h2 class="section-title">Частые вопросы</h2>
+    </div>
+    <div data-aos="fade-up">
+      <div class="accordion-item active">
+        <div class="accordion-header">
+          Сколько хранится талкыш калеве?
+          <svg class="accordion-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9 L12 15 L18 9"/></svg>
+        </div>
+        <div class="accordion-content">
+          <p>В холодильнике при температуре +2…+6°C калеве хранится 14 дней. В морозильной камере — до 3 месяцев. Мы рекомендуем хранить в закрытой таре, чтобы сохранить нежную текстуру и аромат.</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header">
+          Подходит ли калеве для аллергиков?
+          <svg class="accordion-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9 L12 15 L18 9"/></svg>
+        </div>
+        <div class="accordion-content">
+          <p>В составе есть мёд, сливочное масло (лактоза) и пшеничная мука (глютен). Калеве не подходит людям с аллергией на эти продукты. Для детей до 3 лет употребление не рекомендуется из-за наличия мёда.</p>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header">
+          Можно ли сделать корпоративный заказ?
+          <svg class="accordion-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9 L12 15 L18 9"/></svg>
+        </div>
+        <div class="accordion-content">
+          <p>Конечно! Мы работаем с корпоративными клиентами и предлагаем специальные условия: именная гравировка, логотип компании на упаковке, скидки от 10 наборов. Свяжитесь с нами для расчёта.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ORDER / CONTACT -->
+<section id="order" class="py-24 bg-white relative overflow-hidden">
+  <div class="absolute top-0 right-0 w-96 h-96 bg-gold/5 rounded-full blur-3xl"></div>
+  <div class="absolute bottom-0 left-0 w-96 h-96 bg-emerald-t/5 rounded-full blur-3xl"></div>
+  <div class="max-w-5xl mx-auto px-6 relative">
+    <div class="text-center mb-12" data-aos="fade-up">
+      <div class="text-sm tracking-widest text-gold mb-3">ЗАКАЗ</div>
+      <h2 class="section-title">Свяжитесь с нами</h2>
+      <div class="ornament-divider">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2 L12 8 L18 8 L13 12 L15 18 L10 14 L5 18 L7 12 L2 8 L8 8 Z" fill="#c9a961"/></svg>
+      </div>
+      <p class="text-gray-600 max-w-2xl mx-auto">Позвоните или напишите нам в WhatsApp — мы поможем выбрать идеальный набор и оформим заказ</p>
+    </div>
+    
+    <div class="grid md:grid-cols-3 gap-6" data-aos="fade-up">
+      <a href="tel:+79063238582" class="bg-cream p-8 rounded-2xl border border-gold/20 hover:border-gold transition-all hover:shadow-lg group">
+        <div class="w-14 h-14 rounded-full bg-emerald-t/10 flex items-center justify-center flex-shrink-0 mx-auto mb-4 group-hover:bg-gold/20 transition">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0a5c47" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
+        <div class="text-sm text-gray-500 mb-1 text-center">Телефон / WhatsApp</div>
+        <div class="font-serif text-xl text-emerald-dark font-semibold text-center">+7 906 323-85-82</div>
+      </a>
+      
+      <div class="bg-cream p-8 rounded-2xl border border-gold/20">
+        <div class="w-14 h-14 rounded-full bg-emerald-t/10 flex items-center justify-center flex-shrink-0 mx-auto mb-4">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0a5c47" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div class="text-sm text-gray-500 mb-1 text-center">Адрес мастерской</div>
+        <div class="font-serif text-xl text-emerald-dark font-semibold text-center">г. Казань</div>
+      </div>
+      
+      <div class="bg-cream p-8 rounded-2xl border border-gold/20">
+        <div class="w-14 h-14 rounded-full bg-emerald-t/10 flex items-center justify-center flex-shrink-0 mx-auto mb-4">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0a5c47" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6 V12 L16 14"/></svg>
+        </div>
+        <div class="text-sm text-gray-500 mb-1 text-center">Часы работы</div>
+        <div class="font-serif text-xl text-emerald-dark font-semibold text-center">Пн-Вс: 9:00 — 21:00</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KAZAN BANNER -->
+<section class="relative py-20 overflow-hidden">
+  <div class="absolute inset-0">
+    <img src="https://image.qwenlm.ai/public_source/73100530-0856-405f-816f-659fb86ff0aa/105114eeb-ee54-4be7-9530-70fb6551f50b.png" alt="Казань" class="w-full h-full object-cover">
+    <div class="absolute inset-0 bg-emerald-dark/80"></div>
+  </div>
+  <div class="relative max-w-4xl mx-auto px-6 text-center text-white" data-aos="zoom-in">
+    <div class="text-sm tracking-widest text-gold mb-4">НАША КАЗАНЬ</div>
+    <h2 class="font-serif text-4xl md:text-5xl mb-6">Традиции древнего города в каждой сладости</h2>
+    <p class="text-white/80 text-lg mb-8 max-w-2xl mx-auto">Мы гордимся своим городом и бережно храним кулинарное наследие татарского народа. Приезжайте в нашу мастерскую — мы всегда рады гостям!</p>
+    <a href="#order" class="btn-primary">Заказать с доставкой по Казани</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-emerald-dark text-white pt-16 pb-8">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid md:grid-cols-2 gap-8 mb-12">
+      <div>
+        <div class="flex items-center gap-2 mb-4">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+            <circle cx="20" cy="20" r="19" stroke="#c9a961" stroke-width="1.5"/>
+            <path d="M20 8 L23 16 L31 16 L25 21 L27 29 L20 24 L13 29 L15 21 L9 16 L17 16 Z" fill="#c9a961"/>
+          </svg>
+          <div>
+            <div class="font-serif text-lg font-bold">Мастер Гульшат</div>
+            <div class="text-xs text-gold tracking-widest">ТАЛКЫШ КАЛЕВЕ</div>
+          </div>
+        </div>
+        <p class="text-white/60 text-sm leading-relaxed max-w-sm">Авторская кондитерская традиционных татарских сладостей в Казани. С любовью и уважением к традициям.</p>
+      </div>
+      <div>
+        <h4 class="font-serif text-lg mb-4 text-gold">Контакты</h4>
+        <ul class="space-y-2 text-sm text-white/70">
+          <li><a href="tel:+79063238582" class="hover:text-gold transition">+7 906 323-85-82</a></li>
+          <li>г. Казань</li>
+          <li>Пн-Вс: 9:00 — 21:00</li>
+        </ul>
+      </div>
+    </div>
+    <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/50">
+      <div>© 2026 Мастер Гульшат. Все права защищены.</div>
+      <div class="flex gap-6">
+        <a href="#" class="hover:text-gold">Политика конфиденциальности</a>
+        <a href="#" class="hover:text-gold">Договор оферты</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  AOS.init({ once: true, offset: 80 });
+  
+  document.getElementById('menuToggle').addEventListener('click', () => {
+    document.querySelector('.nav-links').classList.toggle('open');
+  });
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.querySelector('.nav-links').classList.remove('open');
+    });
+  });
+  
+  document.querySelectorAll('.accordion-header').forEach(header => {
+    header.addEventListener('click', () => {
+      const item = header.parentElement;
+      const wasActive = item.classList.contains('active');
+      document.querySelectorAll('.accordion-item').forEach(i => i.classList.remove('active'));
+      if (!wasActive) item.classList.add('active');
+    });
+  });
+  
+  window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    if (window.scrollY > 50) {
+      nav.classList.add('shadow-md');
+    } else {
+      nav.classList.remove('shadow-md');
+    }
+  });
+</script>
+
+</body>
+</html>
